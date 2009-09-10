@@ -6,6 +6,7 @@ module Rinda
     def initialize(options = {})
       @port = options[:port]
       @frequency = options[:frequency]
+      @running = false
     end
     
     def start
@@ -16,6 +17,10 @@ module Rinda
     def stop
       @service.stop_service
       @running = false
+    end
+    
+    def running?
+      return running
     end
   end
 end
